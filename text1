@@ -1,1 +1,359 @@
-text1
+Samoylov Lev 
+
+
+#include <cmath>
+#include <random>
+#include <iomanip>
+#include <cstdlib>
+#include <ctime>
+#include <iterator>
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <array>
+#include <list>
+using namespace std;
+
+
+// лаб 9
+//теория
+/*list<int> list1;//пустой список
+list<int> list2(6);//список 6 эл неопределеннных
+list<int> list3(6,3);//список из 6 эл равных 3
+list<int> list4=list3;//копия листа 3
+cout«list4.front()«endl;
+int i=0;//вывод номера элемента
+list4.resize(10,7);//заполнение значений
+auto indexStart=++list4.begin();//сдвиг на 1+ссылка на 2 эл=ссылка на 2 эл
+auto indexEnd=++(++list4.begin());//указатель на последний элемент
+list2.assign(indexStart,indexEnd);//замена значений из листа 4 на лист2
+//list2.assign(4,5);
+for (auto iter=list4.begin();iter!=list4.end();iter++,i++)//добавление по позиции
+{
+cout«i«"--"«*iter«endl;
+}
+list2.push_back(5);//добавление в конец списка
+list2.push_back(-8);
+list2.push_back(100);
+list2.push_back(-81);
+list2.push_back(5);
+for (auto iter=list2.begin();iter!=list2.end();iter++,i++)//добавление по позиции
+{
+cout«i«"--"«*iter«endl;
+}
+cout«endl;
+cout«list1.size()«"-"«list2.size()«endl;
+list1.swap(list2);//обмен списками
+cout«list1.size()«"-"«list2.size()«endl;
+
+
+list2.pop_back();i=0;//замена первогго элемента
+list2.pop_front();
+list2.erase(++list2.begin());
+for (auto iter=list2.begin();iter!=list2.end();iter++,i++)//добавление по позиции
+{
+cout«i«"--"«*iter«endl;
+}*/
+//1
+/*int main()
+{
+setlocale(LC_ALL, "Russian");
+list<int> list1;
+int n;
+cout « "insert n" « endl;
+cin » n;
+int i = 0;
+while (n != 0)
+{
+list1.push_back(n);
+cout « "insert n" « endl;
+cin » n;
+}
+for (auto iter = list1.begin();iter != list1.end();iter++)
+{
+cout « i « "--" « *iter « endl;
+}
+}*/
+//2
+/*int main() {
+setlocale(LC_ALL, "Russian");
+list<int> list1;
+int summ=0;
+int min=100;
+int max=-100;
+int n;
+cout«"insert n"«endl;
+cin»n;
+int i=0;
+while (n!=0)
+{
+list1.push_back(n);
+cout«"insert n"«endl;
+cin»n;
+}
+
+for (auto iter=list1.begin();iter!=list1.end();iter++)
+{
+cout«i«"--"«*iter«endl;
+summ+=*iter;
+
+}
+cout«summ«endl;
+for (auto iter=list1.begin();iter!=list1.end();iter++)
+{
+if (*iter<min)
+
+min=*iter;
+
+if (*iter>max)
+
+max=*iter;
+
+}
+cout«min«endl;
+cout«max«endl;
+}*/
+
+//3
+/*int main()
+{
+setlocale(LC_ALL, "Russian");
+list<int> list1;
+int min=100;
+int max=-100;
+int n;
+cout«"insert n"«endl;
+cin»n;
+int i=0;
+while (n!=0)
+{
+list1.push_back(n);
+cout«"insert n"«endl;
+cin»n;
+}
+i=0;
+for (auto iter=list1.begin();iter!=list1.end();iter++,i++)
+{
+cout«i«"--"«*iter«endl;
+
+
+}
+
+for (auto iter=list1.begin();iter!=list1.end();iter++)
+{
+if (*iter<min)
+
+min=*iter;
+
+if (*iter>max)
+
+max=*iter;
+
+}
+cout«min«endl;
+cout«max«endl;
+min=100;
+auto iterMin=list1.begin();
+for (auto iter=list1.begin();iter!=list1.end();iter++)
+{
+if (*iter<min)
+min=*iter;
+iterMin=iter;
+}
+list1.erase(iterMin);
+i=0;
+for (auto iter=list1.begin();iter!=list1.end();iter++,i++)
+{
+cout«i«"--"«*iter«endl;
+
+
+}
+}*/
+//4
+/*int main()
+{
+setlocale(LC_ALL, "Russian");
+list<int> list1;
+int n;
+cout«"insert n"«endl;
+cin»n;
+int i=0;
+while (n!=0)
+{
+list1.push_back(n);
+cout«"insert n"«endl;
+cin»n;
+}
+i=0;
+for (auto iter=list1.begin();iter!=list1.end();iter++,i++)
+{
+cout«i«"--"«*iter«endl;
+
+
+}
+i=0;
+list1.pop_front();
+for (auto iter=list1.begin();iter!=list1.end();iter++,i++)
+{
+cout«i«"--"«*iter«endl;
+
+
+}
+}*/
+//5
+/*int main()
+{
+list<int> list1;//пустой список
+list<int> list2{ 1,3,7,5,65,9,8,145 };
+list<int> list3;
+int n; int i = 0; int max1, max2;
+cout « "vvedite n" « endl;
+while
+(true){
+cout « " n=" « endl;
+cin » n;
+if (n == 0) break;
+list1.push_back(n);
+}
+
+max1 = list1.front();
+auto maxi1 = list1.begin();
+max2 = list2.front();
+auto maxi2 = list2.begin();
+
+for (auto iter = list1.begin();iter != list1.end();iter++)
+{
+if (*iter > max1)
+{
+max1 = *iter;
+maxi1 = iter;
+}
+
+}
+for (auto iter = list2.begin();iter != list2.end();iter++)
+{
+
+if (*iter > max2)
+{
+max2 = *iter;
+maxi2 = iter;
+}
+}
+list3 = list2;
+list2 = list1;
+list1 = list3;
+for (auto i = list1.begin();i != list1.end();i++)
+cout « "l2=" « *i « " ";
+cout « endl;
+for (auto i = list2.begin();i != list2.end();i++)
+cout « "l1=" « *i « " ";
+}*/
+//6
+/*void du(std::list<int> q)
+{
+int b;
+std::cout « "b = ";
+std::cin » b;
+q.push_front(b);
+q.pop_front();
+while (q.size() != 0)
+{
+std::cout « q.front() « std::endl;
+q.pop_front();
+}
+}
+
+void viv(std::list<int> q)
+{
+std::cout « "Prosto vivod" « std::endl;
+while (q.size() != 0)
+{
+std::cout « q.front() « std::endl;
+q.pop_front();
+}
+}
+
+void po(std::list<int> q)
+{
+int b;
+std::cout « "Vvedite chislo: ";
+std::cin » b;
+while (q.size() != 0)
+{
+if (q.front() == b)
+{
+std::cout « "Est" « std::endl;
+break;
+}
+else
+q.pop_front();
+}
+if (q.size() == 0)
+std::cout « "Ne est" « std::endl;
+}
+
+int main()
+{
+std::list<int> a{ 1,2,3,4,5 };
+std::cout « "vvedite chislo" « std::endl;
+du(a);
+viv(a);
+po(a);
+system("pause");
+return 0;
+}*/
+//7
+//
+//
+void du(std::list<int> q)
+{
+int b;
+std::cout « "b = ";
+std::cin » b;
+q.push_back(b);
+q.pop_front();
+while (q.size() != 0)
+{
+std::cout « q.front() « std::endl;
+q.pop_front();
+}
+}
+
+void viv(std::list<int> q)
+{
+std::cout « "Prosto vivod" « std::endl;
+while (q.size() != 0)
+{
+std::cout « q.front() « std::endl;
+q.pop_front();
+}
+}
+
+void po(std::list<int> q)
+{
+int b;
+std::cout « "Vvedite chislo: ";
+std::cin » b;
+while (q.size() != 0)
+{
+if (q.front() == b)
+{
+std::cout « "Est" « std::endl;
+break;
+}
+else
+q.pop_front();
+}
+if (q.size() == 0)
+std::cout « "Ne est" « std::endl;
+}
+
+int main()
+{
+std::list<int> a{ 1,2,3,4,5 };
+std::cout « "vvedite chislo" « std::endl;
+du(a);
+viv(a);
+po(a);
+system("pause");
+return 0;
